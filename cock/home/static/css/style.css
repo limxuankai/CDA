@@ -5,7 +5,11 @@
 .text {
     text-align: center;
     color: white;
-    font-family: 'High Tower Text'
+    font-family: 'High Tower Text';
+    animation-name: magic;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 div{
@@ -16,6 +20,7 @@ div{
     margin: 10; /* Remove default margin */
 }
 
-#plz{
-    display:block
-}
+@keyframes magic {
+    from {color: white;}
+    to {color: lime;}
+  }
