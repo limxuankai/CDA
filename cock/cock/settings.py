@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*s76fdpvg^z$+uq4-ujt5_kiag$0m93!97=wo%3&omxpo1anr5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["cockdragonacademy.org"]
+ALLOWED_HOSTS = ["cockdragonacademy.org", "127.0.0.1"]
 SECURE_HSTS_SECONDS = 2592000  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -126,3 +126,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# Session cookie name
+SESSION_COOKIE_NAME = 'creamy_cookie'
+
+# Session timeout (in seconds)
+SESSION_COOKIE_AGE = 3600  # 1 hour

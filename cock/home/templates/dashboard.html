@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<p> You pee pee poo poo </p>
+{% load static %}
+    <link rel="stylesheet" href="{% static 'home/dashboard.css' %}">
+<div>
+<ul class="menu horizontal">
+    <li><a href="#">GeeksforGeeks</a></li>
+    <li><a href="#">Web Technology</a></li>
+    <li><a href="#">Data Structure</a></li>
+    <li><a href="#">Programming</a></li>
+    <li><a href="#">Algorithm</a></li>
+</ul>
+</div>
+<p>Hi {{ user }}</p>
 {% endblock %}

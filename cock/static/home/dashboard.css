@@ -1,0 +1,14 @@
+*{
+    background-color: azure;
+}
+
+li{
+    background-color: greenyellow;
+    width: calc(100%/5);
+    display: flex;
+    text-align: center;
+}
+
+a{
+    color: black;
+}
