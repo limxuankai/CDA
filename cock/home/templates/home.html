@@ -1,31 +1,22 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
 {% load static %}
-<html lang="en">
-    <!-- Include Foundation CSS -->
-<link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
-
-
-<script src="{% static 'js/vendor/jquery.js' %}"></script>
-<script src="{% static 'js/vendor/what-input.js'%}"></script>
-<script src="{% static 'js/vendor/foundation.min.js' %}"></script>
-<link rel="stylesheet" href="{% static 'home/style.css' %}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CDA</title>
-</head>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
 <div class="center-container">
     <h1 class="text"> Trust in the system </h1>
     <br>
-    <form>
+    <form method="post">
+        {% csrf_token %}
         <div class="grid-container">
           <div class="grid-x grid-padding-x">
             <div class="medium-25 cell">
-                <input class="black-form" type="password" placeholder="Agent">
+                <input class="black-form" type="password" placeholder="Name" id="Name" name="Name">
             </div>
             <div class=" medium-25 cell">
-                <input class="black-form" type="password" placeholder="Key">
+                <input class="black-form" type="password" placeholder="Key" id="Password" name="Password">
             </div>
           </div>
         </div>
@@ -34,6 +25,7 @@
             <input type="submit" class="clear button success" value="Enter">
           </div>
       </form>
+    {% endblock %}
 </div>
 <script>
     $(document).foundation();
