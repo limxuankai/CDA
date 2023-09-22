@@ -24,9 +24,15 @@ def home(request):
 
 def dashboard(request, user):
     if 'username' not in request.session:
-        return HttpResponseForbidden()
+        return render(request,"trial.html")
     username = request.session['username']
     context = {
         'user': username,
     }
     return render(request, "dashboard.html", context)
+
+def trial(request):
+    return render(request,"trial.html")
+
+def index(request):
+    return render(request, "trial.html")

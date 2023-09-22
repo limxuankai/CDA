@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-MIDDLEWARE += ["csp.middleware.CSPMiddleware"]
 ROOT_URLCONF = 'cock.urls'
 CSP_STYLE_SRC = ["'self'", "cdn.jsdelivr.net"]
 TEMPLATES = [

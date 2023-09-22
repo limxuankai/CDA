@@ -3,12 +3,13 @@
 }
 
 li{
-    background-color: greenyellow;
-    width: calc(100%/5);
+    background-color: green;
+    height: calc(100%/5);
+    width: 90px;
     display: flex;
     text-align: center;
 }
 
 a{
-    color: black;
+    color: white;
 }

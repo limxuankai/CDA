@@ -1,34 +1,32 @@
 *{
-    background-color: black;
+    background-color: #f6f6f6;
 }
 
 .text {
     text-align: center;
-    color: black;
+    color: #f6f6f6;
     font-family: 'High Tower Text';
     animation-name: magic;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
-
+img{
+    width: 250px;
+    height: 250px;
+}
 .center-container {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
 }
 @keyframes magic {
-    from {color: black;}
-    to {color: #3adb76;}
+    from {color: #f6f6f6;}
+    to {color: #0c7e2e;}
   }
 
-  input[type="password"],
-  textarea {
-      color: white;
-  }
-.black-form {
-        background-color: black; /* Set the background color to black */
-        padding: 20px; /* Add some padding to the form for better visibility */
-    }
+h1{
+    font-size: 50px;
+}
