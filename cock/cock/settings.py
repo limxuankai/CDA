@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'cock.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CDA',
+        'USER': 'GOD',
+        'PASSWORD': 'C2=5C8-1C8=5',
+        'HOST': '3.27.103.174',  # Use the appropriate database host
+        'PORT': '',           # Leave blank to use the default MySQL port (3306)
     }
 }
 

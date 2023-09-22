@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate
 from django.http import HttpResponseForbidden
 from django.urls import reverse
+from django.db import connections
+
 
 # Create your views here.
 def home(request):
@@ -10,12 +12,19 @@ def home(request):
     except KeyError:
         request.session['username'] is None
     if request.session.get('username') is not None:
-        return redirect("dashboard")
+        context = {
+        'user': request.session.get('username'),
+        }
+        return redirect("dashboard", context)
     if request.method == 'POST':
         username = request.POST.get('Name')
         password = request.POST.get('Password')
-        user = authenticate(username=username, password=password)
-        if user is None:
+        default_connection = connections['default']
+        with default_connection.cursor() as cursor:
+            cursor.execute(f"SELECT user_id FROM users WHERE name = '{username}' AND Password = '{password}'")
+            results = cursor.fetchone()
+            print(results)
+        if results is None:
             return render(request, "home.html")
         else:
             request.session['username'] = username
